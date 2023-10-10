@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Blog - Akhil's Personal Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Template Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700" rel="stylesheet">
+
+    <!-- Template CSS Files -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/preloader.min.css" rel="stylesheet">
+    <link href="css/circle.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/fm.revealator.jquery.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- CSS Skin File -->
+    <link href="css/skins/yellow.css" rel="stylesheet">
+
+    <!-- Modernizr JS File -->
+    <script src="js/modernizr.custom.js"></script>
+</head>
+
+<body class="blog-post">
+<!-- Header Starts -->
+<header class="header" id="navbar-collapse-toggle">
+    <!-- Fixed Navigation Starts -->
+    <ul class="icon-menu d-none d-lg-block revealator-slideup revealator-once revealator-delay1">
+        <li class="icon-box">
+            <i class="fa fa-home"></i>
+            <a href="index.html">
+                <h2>Home</h2>
+            </a>
+        </li>
+        <li class="icon-box">
+            <i class="fa fa-user"></i>
+            <a href="about.html">
+                <h2>About</h2>
+            </a>
+        </li>
+        <li class="icon-box">
+            <i class="fa fa-briefcase"></i>
+            <a href="portfolio.html">
+                <h2>Portfolio</h2>
+            </a>
+        </li>
+        <li class="icon-box">
+            <i class="fa fa-envelope-open"></i>
+            <a href="contact.html">
+                <h2>Contact</h2>
+            </a>
+        </li>
+        <li class="icon-box active">
+            <i class="fa fa-comments"></i>
+            <a href="blog.html">
+                <h2>Blog</h2>
+            </a>
+        </li>
+    </ul>
+    <!-- Fixed Navigation Ends -->
+    <!-- Mobile Menu Starts -->
+    <nav role="navigation" class="d-block d-lg-none">
+        <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul class="list-unstyled" id="menu">
+                <li><a href="index.html"><i class="fa fa-home"></i><span>Home</span></a></li>
+                <li><a href="about.html"><i class="fa fa-user"></i><span>About</span></a></li>
+                <li><a href="portfolio.html"><i class="fa fa-folder-open"></i><span>Portfolio</span></a></li>
+                <li><a href="contact.html"><i class="fa fa-envelope-open"></i><span>Contact</span></a></li>
+                <li class="active"><a href="blog.html"><i class="fa fa-comments"></i><span>Blog</span></a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Mobile Menu Ends -->
+</header>
+<!-- Header Ends -->
+<!-- Page Title Starts -->
+<section class="title-section text-left text-sm-center revealator-slideup revealator-once revealator-delay1">
+    <h1>my <span>blog</span></h1>
+    <span class="title-bg">posts</span>
+</section>
+<!-- Page Title Ends -->
+<!-- Main Content Starts -->
+
+<section class="main-content revealator-slideup revealator-once revealator-delay1">
+    <div class="container">
+        <div class="row">
+            <!-- Article Starts -->
+            <article class="col-12">
+                <!-- Meta Starts -->
+                <div class="meta open-sans-font">
+                    <span><i class="fa fa-user"></i> Akhil</span>
+                    <span class="date"><i class="fa fa-calendar"></i> 13th May, 2023</span>
+                    <span><i class="fa fa-tags"></i> AWS, VPC, ASG, ELB</span>
+                </div>
+                <!-- Meta Ends -->
+                <!-- Article Content Starts -->
+                <h1 class="text-uppercase text-capitalize">Architecting 3 Tier Application on AWS VPC with ASG, ELB along Backup plan</h1>
+                <img src="./img/blog-post/week2.jpg" class="img-fluid" alt="Blog image"/>
+                <div class="blog-excerpt open-sans-font pb-5">
+                    <p>What is three-tier architecture? Three-tier architecture is a well-established software application architecture that organizes applications into three logical and physical computing tiers: the presentation tier, or user interface; the application tier, where data is processed; and the data tier, where the data associated with the application is stored and managed as shown below.</p> <p> <img src='./img/blog-post/w2i1.jpg'> </p>Presentation Tier </p> The presentation tier occupies the top level of the application. It sends content to browsers in the web development frameworks, such as CSS, HTML, or JavaScript, and displays information in the form of a graphical user interface (GUI), which allows users to can access it directly. It communicates with other layers by putting out the results to the browser and other tiers through API calls. <p>Application Tier</p>The application tier is also called the business logic, logic tier, or middle tier. Processing the business logic for the application builds a bridge between the presentation layer and the data layer to make communication faster between the presentation and the data layer. The application tier is usually coded in C#, Java, C++, Python, Ruby, etc.<p> Data Tier </p> Data-tier is composed of a persistent storage mechanism and the data access layer. It supports connecting with the database and performing insert, update, delete, and get data from the database based on our input data. <p> Virtual private clouds (VPC) </p> A VPC is a virtual network that closely resembles a traditional network that you'd operate in your data center. With Amazon Virtual Private Cloud (Amazon VPC), you can launch AWS resources in a logically isolated virtual network that you've defined <p> Creating a VPC </p> 1. In the AWS Management Console, navigate to VPC → Create VPC →VPC Settings → Resources to create → VPC only (include a name), IPV4 CIDR block → 172.32.0.0/16 → Create VPC <p> <img src='./img/blog-post/w2i2.jpg'> </p> Subnets </p> A subnet is a range of IP addresses in your VPC. A subnet must reside in a single Availability Zone. After you add subnets, you can deploy AWS resources in your VPC. <p> Creating subnets </p> 1. Now navigate to subnets and follow Subnets → Create subnet → VPC → VPC ID → select the VPC created in the previous step. Name each subnet(say i.e webtier-public-subnet1) and provide a CIDR for each. <p> <img src='./img/blog-post/w2i3.jpg'> </p> 2. Similarly, we will be creating 5 more subnets with different CIDR ranges for web, app and database tiers in different available zones as shown in below table. <p> <img src='./img/blog-post/w2i4.jpg'> </p> After all the subnets are created it will look like this <p> <img src='./img/blog-post/w2i5.jpg'> </p> Internet gateway <p> An internet gateway is a horizontally scaled, redundant, and highly available VPC component that allows communication between your VPC and the internet. It supports IPv4 and IPv6 traffic. </p> Creating Internet Gateways <p> 1. Navigate to Internet gateways → Create Internet gateway → Name tag, give the name of your gateway.</p>  \n\n Steps: \n\n 1. Go the Cloudfront and create a distribution and for the origin, it will automatically pop out the s3 URL when you drop down. Choose that URL \n\n <img src='./img/blog-post/w2i6.jpg'> \n\n After IGW is created it needs to be attached to the vpc you created i.e. 3tier-vpc. So Select your vpc → Actions → Attach to VPC → then select your vpc \n\n  <img src='./img/blog-post/w2i7.jpg'> \n\n NAT gateways \n\n A NAT gateway is a Network Address Translation (NAT) service. You can use a NAT gateway so that instances in a private subnet can connect to services outside your VPC but external services cannot initiate a connection with those instances. \n\n Creating Nat Gateway \n\n Navigate to Nat gateway → create nat gateway →name →subnet (select the public subnet ) →Connectivity type(public)→ Allocate Elastic IP →Create Nat Gateway. \n\n <img src='./img/blog-post/w2i8.jpg'> \n\n Route tables \n\n A route table contains a set of rules, called routes, that determine where network traffic from your subnet or gateway is directed. Each route in a table specifies a destination and a target. For example, to enable your subnet to access the internet through an internet gateway, add the following route to your subnet route table. The destination for the route is 0.0.0.0/0, which represents all IPv4 addresses. The target is the internet gateway that's attached to your VPC \n<p> Creating Route Tables <p><p> 1. Navigate to route tables →Create route table → Name your route table →Select your vpc →Create. <p><p> <img src='./img/blog-post/w2i9.jpg'> <p><p> 2. We will be creating 2 more route tables one for the app tier and one for the database tier. So after the creation of the route table, it will look like this. <p><p> <img src='./img/blog-post/w2i10.jpg'> <p><p> Associating Subnets, IGW and Nat gateway with respective route tables <p><p> After route tables are created, it is necessary to associate your subnets with the route table. Also as our webtier will be facing the internet so in the route section we will provide internet gateway. similarly, for the app tier and database tier, we donot want to expose public facing internet directly so we will attach nat gateway in their routes section. You can see the below table for the respective route and subnet association. <p><p> <img src='./img/blog-post/w2i11.jpg'> <p><p> 1. Select your route table →Routes →Edit routes → Add route → Destination(0.0.0.0/0) → Internet gateway(you created) → Save changes.<p><p> <img src='./img/blog-post/w2i12.jpg'> <p><p> Now we will associate subnets in route tables go to → subnet associations → edit subnet association →select your subnets → save changes. <p><p> <img src='./img/blog-post/w2i11.jpg'> <p><p> 3. After all the subnets are associated with route tables you can view your mapping. Go to VPC → Select your vpc → Resource Maps <p><p> <img src='./img/blog-post/w2i13.jpg'> <p><p> Elastic Load Balancing <p><p> A load balancer accepts incoming traffic from clients and routes requests to its registered targets (such as EC2 instances) in one or more Availability Zones. The load balancer also monitors the health of its registered targets and ensures that it routes traffic only to healthy targets. When the load balancer detects an unhealthy target, it stops routing traffic to that target. It then resumes routing traffic to that target when it detects that the target is healthy again. <p><p> Create the Application Load Balancer <p><p> 1. Navigate to EC2 in the AWS Management Console. Load Balancing → Load Balancers → Create Load Balancer <p><p> <img src='./img/blog-post/w2i14.jpg'> <p><p> 2. Select Application load balancer → Basic Configuration → Load balancer name (webtier-alb) , Scheme →select “Internet-facing”, IP address type → select IPV4 <p><p> <img src='./img/blog-post/w2i15.jpg'> <p><p> 3. Network mapping → VPC (select the one created say 3tier-vpc), Mappings → select each AZ and the public subnets associated with each)<p><p> <img src='./img/blog-post/w2i16.jpg'> <p><p> 4. Security groups → Create a new security group (this will open a new tab)→ Basic details → Create a Security group name (webtier-alb-sg), and select the VPC (3tier-vpc) created earlier. Inbound rules must be configured to allow any IPV4 traffic through ports 80 (HTTP) → Create security group<p><p> <p><p> <img src='./img/blog-post/w2i17.jpg'> <p><p> AWS CodePipeline: <p><p> 5. Listeners and routing → Listener should use the HTTP protocol on Port 80 → Create target group (this will open a new tab) → Choose a target type → Select Instances → create a Target group name (webtier-target-group) → accept all other defaults and click Next. Since we have not created the EC2 instances at this stage, we will skip Registering targets for now and Create target group. Now return to the Load Balancer page, select the new target group and Create load balancer. <p><p> <img src='./img/blog-post/w2i18.jpg'> <p><p> Note: If your application has multiple tiers, you can design an architecture that uses both internal and internet-facing load balancers. For example, this is true if your application uses web servers that must be connected to the internet, and application servers that are only connected to the web servers. Create an internet-facing load balancer and register the web servers with it. Create an internal load balancer and register the application servers with it. The web servers receive requests from the internet-facing load balancer and send requests for the application servers to the internal load balancer. The application servers receive requests from the internal load balancer.<p><p> Creating application load balancer for apptier <p><p> 1. Follow all the steps that are same as for the webtier but in Scheme →Select “Internal”. <p><p> 2. Security groups → Create a new security group (this will open a new tab)→ Basic details → Create a Security group name (apptier-alb-sg), and select the VPC (3tier-vpc) created earlier. Inbound rules must be configured to allow traffic from webtier-alb load balancer so select the security group of your alb**(webtier-alb-sg)** → Create security group <p><p> <img src='./img/blog-post/w2i19.jpg'> <p><p> AWS Auto Scaling<p><p> AWS Auto Scaling lets you build scaling plans that automate how groups of different resources respond to changes in demand. You can optimize availability, costs, or a balance of both. AWS Auto Scaling automatically creates all of the scaling policies and sets targets for you based on your preference. <p><p> Configure Launch Templates <p><p> For Webtier: <p><p> Navigate to EC2 → Instances → Launch Templates → Create launch template → create a Launch template name (webtier-launch-template), Template version description (app tier), select the box under Auto Scaling guidance. AMI → Amazon Linux 2 Kernel 5.10 with a t2.micro Instance type Create new key pair or select an existing key pair. <p><p>  <img src='./img/blog-post/w2i20.jpg'> <p><p> <img src='./img/blog-post/w2i21.jpg'> <p><p> 2. Network Settings → Do not specify a subnet in this template. Security groups → Create security group → Create a Security group name (webtier-sg),provide some Description, VPC (3tier-vpc) with rules to allow traffic through ports 80 (HTTP) and 22 (SSH). Go to advance network configuration →Add network interference →Enable auto assign public ip. Under “User data” under “Advanced details” i have installed Apache web server → “Create launch template”. <p><p> <img src='./img/blog-post/w2i23.jpg'> <p><p> Creating Autoscaling group <p><p> 1. Navigate to EC2 → Auto Scaling groups → Create Autoscaling group (webtier-auto-scaling) using the “Launch template” created for the web tier (webtier-launch-template). Choose your VPC →attach to an existing load balancer → choose your target groups → desired capacity (2) → minimum capacity (2) →maximum capacity(3) These are the number of instances you want. <p><p> <img src='./img/blog-post/w2i24.jpg'> <p><p>  <img src='./img/blog-post/w2i25.jpg'> <p><p> <p><p> <img src='./img/blog-post/w2i26.jpg'> <p><p> 2. Keep all this as default and create auto-scaling groups. After that, you can observe the instances created on the EC2 console. Also, grab the load balancer URL and paste it into your browser.<p><p> <img src='./img/blog-post/w2i27.jpg'> <p><p> Note for Application Tier: I repeated the steps for the web tier, but in the private subnets for the auto scaling group. I also configured the apptier security group by only allowing the traffic from web tiers means web tier’s security group access and also disable auto assign public ip. <p><p>Creating database, connecting EC2 and taking backup: <p><p> 1. Let's first create a subnet group that we created earlier in vpc . Navigate to “RDS” in the “AWS Management Console” →Create Subnet groups → name your subnet group→ select the vpc → add the subnets → and Create<p><p> <img src='./img/blog-post/w2i28.jpg'> <p><p>2. Now navigate to Databases → “Create database” → Select “Standard create” and select the following options to configure the database tier: postgres → template(dev/test) note you can you free tier →Availability and durability (say multi az db instance) → DB cluster identifier (database-1) → Master username → Master password → Instance configuration as per your choice. <p><p>  <img src='./img/blog-post/w2i29.jpg'> <p><p> <img src='./img/blog-post/w2i30.jpg'> <p><p> 3. In the connectivity section →connect to an EC2 computer resource →select your instance → choose the subnet db group → No to public access create a new VPC security group(database-security-group) and note that the 5432 port is added. Note: later the VPC security group needs to be modified by deleting the default rule and selecting the database port 5432 and identifying the app tier’s security group as a source → Create rule. <p><p> <img src='./img/blog-post/w2i30.jpg'> <p><p>4. For the backup, we can add the setting → advanced configuration→ backup (retention period say 1). You can also enable backup replication in another region (if you do not opt free tier). → Create database. <p><p> <img src='./img/blog-post/w2i31.jpg'> <p><p> Once database is up and running you can verifiy your connectivity from apptier instances. <p><p> AWS WAF <p><p> AWS WAF helps you protect against common web exploits and bots that can affect availability, compromise security, or consume excessive resources. It is a web application firewall service that lets you monitor web requests that are forwarded to an Amazon API Gateway API, an Amazon CloudFront distribution, or an Application Load Balancer. You can protect those resources based on conditions that you specify, such as the IP addresses that the requests originate from. <p><p> Creating WAF <p><p> 1. Here I will be blocking my ip to access the webtier application navigate to WAF → ip sets → give the name → region →give the ranges the ip addresses which you want to block (for demo i am choosing my ip address) <p><p> <img src='./img/blog-post/w2i32.jpg'> <p><p> 2. Now navigate to Web ACLS → Create web acl → resource type(application load balancer) → region → add aws resources (application load balancer) select your resource name → add rule and rules groups (add my own rule) → select the ip sets which you created → add block rule → Create. <p><p> <img src='./img/blog-post/w2i33.jpg'> <p><p> <img src='./img/blog-post/w2i34.jpg'> <p><p> <img src='./img/blog-post/w2i35.jpg'> <p><p> 3. After it has been created check the alb URL from your ip which show a 403 forbidden error. <p><p> AWS Backup <p><p> AWS Backup is a fully managed backup service that makes it easy to centralize and automate the backup of data across AWS services in the cloud and on premises. Using AWS Backup, you can configure backup policies and monitor backup activity for your AWS resources in one place. AWS Backup automates and consolidates backup tasks that were previously performed service-by-service, and removes the need to create custom scripts and manual processes. With just a few clicks on the AWS Backup console, you can create backup policies that automate backup schedules and retention management. <p><p> 1. Navigate to AWS backup from the management console → create backup plan → build new plan →name → backup rule configuration (select you backup frequency) → you can use your customize backup window also. → choose your destination. <p><p> <img src='./img/blog-post/w2i36.jpg'> <p><p> <img src='./img/blog-post/w2i37.jpg'> <p><p> 2. Assign resource → Name → Choose your resource and which back you want here I have selected all the instances which back you want→ Create. <p><p> <img src='./img/blog-post/w2i38.jpg'> <p><p> This is how we can have a backup plan for your resources in case of any disaster. <p><p> After you have gone through the creation of the resource. Please do not forget to destroy the resources created. <p><p> Thank you for reading my blog. <p><p> References: <p><p> https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html <p><p> https://docs.aws.amazon.com/elasticloadbalancing/ <p><p> https://aws.amazon.com/blogs/aws/aws-backup-automate-and-centrally-manage-your-backups/ <p><p> https://docs.aws.amazon.com/waf/index.html <p><p> https://aws.amazon.com/blogs/aws/aws-auto-scaling-unified-scaling-for-your-cloud-applications/<p>
+                </div>
+                <!-- Article Content Ends -->
+            </article>
+            <!-- Article Ends -->
+        </div>
+    </div>
+</section>
+
+<!-- Template JS Files -->
+<script src="js/jquery-3.5.0.min.js"></script>
+<script src="js/preloader.min.js"></script>
+<script src="js/fm.revealator.jquery.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/masonry.pkgd.min.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/cbpGridGallery.js"></script>
+<script src="js/jquery.hoverdir.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/custom.js"></script>
+
+</body>
+
+</html>

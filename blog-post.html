@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Blog - Akhil's Personal Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Template Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700" rel="stylesheet">
+
+    <!-- Template CSS Files -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/preloader.min.css" rel="stylesheet">
+    <link href="css/circle.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/fm.revealator.jquery.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- CSS Skin File -->
+    <link href="css/skins/yellow.css" rel="stylesheet">
+
+    <!-- Modernizr JS File -->
+    <script src="js/modernizr.custom.js"></script>
+</head>
+
+<body class="blog-post">
+<!-- Header Starts -->
+<header class="header" id="navbar-collapse-toggle">
+    <!-- Fixed Navigation Starts -->
+    <ul class="icon-menu d-none d-lg-block revealator-slideup revealator-once revealator-delay1">
+        <li class="icon-box">
+            <i class="fa fa-home"></i>
+            <a href="index.html">
+                <h2>Home</h2>
+            </a>
+        </li>
+        <li class="icon-box">
+            <i class="fa fa-user"></i>
+            <a href="about.html">
+                <h2>About</h2>
+            </a>
+        </li>
+        <li class="icon-box">
+            <i class="fa fa-briefcase"></i>
+            <a href="portfolio.html">
+                <h2>Portfolio</h2>
+            </a>
+        </li>
+        <li class="icon-box">
+            <i class="fa fa-envelope-open"></i>
+            <a href="contact.html">
+                <h2>Contact</h2>
+            </a>
+        </li>
+        <li class="icon-box active">
+            <i class="fa fa-comments"></i>
+            <a href="blog.html">
+                <h2>Blog</h2>
+            </a>
+        </li>
+    </ul>
+    <!-- Fixed Navigation Ends -->
+    <!-- Mobile Menu Starts -->
+    <nav role="navigation" class="d-block d-lg-none">
+        <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul class="list-unstyled" id="menu">
+                <li><a href="index.html"><i class="fa fa-home"></i><span>Home</span></a></li>
+                <li><a href="about.html"><i class="fa fa-user"></i><span>About</span></a></li>
+                <li><a href="portfolio.html"><i class="fa fa-folder-open"></i><span>Portfolio</span></a></li>
+                <li><a href="contact.html"><i class="fa fa-envelope-open"></i><span>Contact</span></a></li>
+                <li class="active"><a href="blog.html"><i class="fa fa-comments"></i><span>Blog</span></a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Mobile Menu Ends -->
+</header>
+<!-- Header Ends -->
+<!-- Page Title Starts -->
+<section class="title-section text-left text-sm-center revealator-slideup revealator-once revealator-delay1">
+    <h1>my <span>blog</span></h1>
+    <span class="title-bg">posts</span>
+</section>
+<!-- Page Title Ends -->
+<!-- Main Content Starts -->
+<section class="main-content revealator-slideup revealator-once revealator-delay1">
+    <div class="container">
+        <div class="row">
+            <!-- Article Starts -->
+            <article class="col-12">
+                <!-- Meta Starts -->
+                <div class="meta open-sans-font">
+                    <span><i class="fa fa-user"></i> Akhil</span>
+                    <span class="date"><i class="fa fa-calendar"></i> 5th March, 2023</span>
+                    <span><i class="fa fa-tags"></i> AWS, S3, CloudFront, CodePipeline</span>
+                </div>
+                <!-- Meta Ends -->
+                <!-- Article Content Starts -->
+                <h1 class="text-uppercase text-capitalize">Hosting static website on S3 and CloudFront and creating CI/CD pipeline</h1>
+                <img src="./img/blog-post/week1.jpg" class="img-fluid" alt="Blog image"/>
+                <div class="blog-excerpt open-sans-font pb-5">
+                    <p>AWS S3 or Amazon Simple Storage Service is an object storage service that stores data as objects within buckets. An object is a file and any metadata that describes the file. Apart from data storage functionality, the AWS S3 bucket provides a feature of hosting static websites over it.</p><p> We will be creating a simple website and will be hosting on S3 along with that we will be pointing our website URL on Cloudfront as the origin.</p><p> Let's create a bucket where we will be uploading our index.html and index.css </p><p>Steps:<p><p> 1. Create a bucket i.e. 1weekofdevops and unmark Block all public access because we will be hosting web on S3, so the bucket should be publically accessible as shown below.<p><p> <img src='./img/blog-post/w1i1.jpg'> <p><p> 2. Once the bucket is created, go to the permissions tab of that bucket and go below where you will see the option to enable static website hosting. Enable it and in the index document give the file name containing the html code. <p><p> <img src='./img/blog-post/w1i2.jpg'> <p><p> 3. Since your bucket is publically accessible it does not mean your object is also accessible. At the object level, it should also be accessible else it will throw an error in S3 URL. So here we will define the policies at the object level as shown below. <p><p> <img src='./img/blog-post/w1i3.jpg'> <p><p> 4. Now upload your file to your bucket as shown and after uploading your files, click on the S3 URL. You will see your web page deployed. <p><p> <img src='./img/blog-post/w1i4.jpg'> <p><p> <img src='./img/blog-post/w1i5.jpg'> <p><p> Amazon Cloudfront: <p><p> Amazon CloudFront is a content delivery network (CDN) that accelerates the delivery of static and dynamic web content to end users. CloudFront delivers content through a worldwide network of data centers called edge locations. When an end user requests content that you’re serving with CloudFront, the request is routed to the edge location nearest to the end user with the lowest latency. <p><p> Steps: <p><p> 1. Go the Cloudfront and create a distribution and for the origin, it will automatically pop out the s3 URL when you drop down. Choose that URL <p><p> <img src='./img/blog-post/w1i6.jpg'> <p><p> 2. As we move ahead, we will be creating a pipeline, so that whenever codes change it should directly reflect on our webpage. As Cloudfront uses cache content it might delay in displaying our changed content. So, for this, we will be disabling caching as shown below. <p><p>  <img src='./img/blog-post/w1i7.jpg'> <p><p> 3. In the viewer, section choose the protocol policy and allowed HTTP methods as per your requirement. <p><p>  <img src='./img/blog-post/w1i8.jpg'> <p><p> 4. If you have a domain registered or you own any domain name then we can point out Cloudfront Url to that domain in the CNAME section. <p><p>  <img src='./img/blog-post/w1i9.jpg'> <p><p> 5. You can enable logging that will store the log files of viewers' requests in the S3 bucket. For this, I already created a bucket that will store the logs generated. <p><p> <img src='./img/blog-post/w1i10.jpg'> <p><p> 6. Now keep all things as default and click on Create a distribution. Once it is created you will get the Distribution domain name. Copy and paste it into your browser. Your website is up and running. <p><p> <img src='./img/blog-post/w1i11.jpg'> <p><p> AWS CodePipeline: <p><p> AWS CodePipeline is a continuous integration and continuous delivery service for fast and reliable application and infrastructure updates. You can use CodePipeline to fully model and automate your software release processes. <p><p> AWS CodePipeline can pull source code for your pipeline directly from AWS CodeCommit, GitHub, Amazon ECR, or Amazon S3. It can run builds and unit tests in AWS CodeBuild. CodePipeline can deploy your changes using AWS CodeDeploy, AWS Elastic Beanstalk, Amazon Elastic Container Service (Amazon ECS), or AWS Fargate. <p><p> Here we will be creating a pipeline to integrate with my GitHub repos where my codes are and whenever someone commits changes the pipeline should automatically trigger. <p><p> Steps: <p><p> 1. Go to AWS Pipeline, click on create pipeline, name your pipeline and click on Next. <p><p> <img src='./img/blog-post/w1i12.jpg'> <p><p> 2. In the Source section, you can choose your repository. For me, I have uploaded it on GitHub so I will be linking Github repo here. <p><p> <img src='./img/blog-post/w1i13.jpg'> <p><p> 3. You can skip the build section as we are not building any artifacts. <p><p> <img src='./img/blog-post/w1i14.jpg'> <p><p> 4. In the Deploy Provider section, give the bucket name where your code files are and whenever changes apply, it should upload the changed files. Check extract files before deploy option as we don't want jar files to be uploaded. <p><p> <img src='./img/blog-post/w1i14.jpg'> <p><p> 5. Click on Next and Your pipeline is created. You make some changes to your source code and push it to repo. CodePipeline will automatically detect it and trigger the pipeline. <p><p> <img src='./img/blog-post/w1i15.jpg'> <p><p>  5. Click on Next and Your pipeline is created. You make some changes to your source code and push it to repo. CodePipeline will automatically detect it and trigger the pipeline. <p><p> <img src='./img/blog-post/w1i16.jpg'> <p><p> Note: the URLs you obtained here are AWS-specific. If you own your domain, then you can use AWS Route 53 to redirect CloudFront or S3 URLs to your domain. <p><p> AWS ROUTE 53 <p><p> Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service. Route 53 connects user requests to internet applications running on AWS or on-premises. <p><p> Steps: <p><p> 1. Go to Route 53 and click on Create Hosted Zone. <p><p> <img src='./img/blog-post/w1i17.jpg'> <p><p> 2. If you own any domain then enter your domain name. <p><p> 3. Now we will create the A records to send requests Cloudfront URL. Check the Alias button and under Route traffic to choose Alias to CloudFront Distribution. <p><p> <img src='./img/blog-post/w1i18.jpg'> <p><p> Here we go, you have redirected your domain to CloudFront URL. <p><p> Viola <p><p> #10weeksofcloudops <p><p> References: <p><p> https://docs.aws.amazon.com/AmazonS3/latest/userguide/website-hosting-cloudfront-walkthrough.html#create-distribution <p><p> https://docs.aws.amazon.com/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html <p><p> https://devopswithgopal.hashnode.dev/hosting-static-website-on-s3-and-cloudfront-and-creating-cicd-pipeline <p><p>
+                </div>
+                <!-- Article Content Ends -->
+            </article>
+            <!-- Article Ends -->
+        </div>
+    </div>
+</section>
+
+<!-- Template JS Files -->
+<script src="js/jquery-3.5.0.min.js"></script>
+<script src="js/preloader.min.js"></script>
+<script src="js/fm.revealator.jquery.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/masonry.pkgd.min.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/cbpGridGallery.js"></script>
+<script src="js/jquery.hoverdir.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/custom.js"></script>
+
+</body>
+
+</html>
