@@ -1242,7 +1242,8 @@ body.light hr.separator {
   border-radius: 5px;
   margin-bottom: 20px;
   width: 100%;
-  object-fit: contain;
+  object-fit: fill;
+  height: 500px !important;
 }
 
 .blog-post .meta {
@@ -1770,8 +1771,8 @@ body.light hr.separator {
 }
 .img-fluid {
   max-width: 100% !important;
-  height: 250px !important;
-  object-fit: cover !important;
+  height: 300px !important;
+  object-fit: fill !important;
 }
 .blog .post-content {
   min-height: 380px !important;
